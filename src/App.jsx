@@ -66,10 +66,10 @@ export default function App() {
       setLoading(true);
       try {
         const [meta, oa, parcels, plans] = await Promise.all([
-          fetch("/data/metadata.json").then((res) => res.json()),
-          fetch("/data/oa.geojson").then((res) => res.json()),
-          fetch("/data/parcels.geojson").then((res) => res.json()),
-          fetch("/data/plans.geojson").then((res) => res.json()),
+         fetch(`${import.meta.env.BASE_URL}data/metadata.json`).then((res) => res.json()),
+fetch(`${import.meta.env.BASE_URL}data/oa.geojson`).then((res) => res.json()),
+fetch(`${import.meta.env.BASE_URL}data/parcels.geojson`).then((res) => res.json()),
+fetch(`${import.meta.env.BASE_URL}data/plans.geojson`).then((res) => res.json()),
         ]);
 
         if (ignore) return;
